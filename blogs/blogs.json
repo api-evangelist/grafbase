@@ -1,0 +1,109 @@
+{
+  "provider": "grafbase",
+  "blogUrl": "https://grafbase.com/blog",
+  "changelogUrl": "https://grafbase.com/changelog",
+  "lastFetched": "2026-06-13",
+  "posts": [
+    {
+      "title": "Breaking Change Approvals",
+      "url": "https://grafbase.com/changelog/breaking-change-approvals",
+      "type": "changelog",
+      "author": "Tom Houlé",
+      "description": "Combine schema proposals with operation checks for fine-grained breaking change management. The feature introduces configurable settings to flag theoretically breaking changes and require formal approval via Schema Proposals before production deployment.",
+      "tags": ["schema", "breaking-changes", "governance", "schema-proposals", "operation-checks"]
+    },
+    {
+      "title": "Introducing Audit Logs",
+      "url": "https://grafbase.com/changelog/introducing-audit-logs",
+      "type": "changelog",
+      "author": "Benjamin Rabier",
+      "description": "Track and analyze organization activity with comprehensive audit logging. Captures graph management operations, team membership changes, access control events, and configuration updates with 90-day retention and CSV export.",
+      "tags": ["audit-logs", "compliance", "observability", "enterprise", "security"]
+    },
+    {
+      "title": "Native Single Sign-On in the Enterprise Platform",
+      "url": "https://grafbase.com/changelog/native-sso-in-the-enterprise-platform",
+      "type": "changelog",
+      "author": "Tom Houlé",
+      "description": "Introduces native OpenID Connect-based SSO for the Enterprise Platform, enabling direct identity provider integration without intermediate services. Supports just-in-time organization membership provisioning through OIDC groups.",
+      "tags": ["sso", "oidc", "authentication", "enterprise", "identity"]
+    },
+    {
+      "title": "Announcing Schema Contracts",
+      "url": "https://grafbase.com/changelog/announcing-schema-contracts",
+      "type": "changelog",
+      "author": "Benjamin Rabier",
+      "description": "Define and enforce specific schema subsets for enhanced security and control. Uses @tag directive to create filtered views of federated GraphQL schemas for different consumers — mobile, AI/LLM, internal.",
+      "tags": ["schema-contracts", "security", "governance", "graphql", "schema-management"]
+    },
+    {
+      "title": "Announcing the Grafbase remote MCP server",
+      "url": "https://grafbase.com/changelog/announcing-grafbase-remote-mcp",
+      "type": "changelog",
+      "author": "Tom Houlé",
+      "description": "Launch of a remote MCP server at api.grafbase.com/mcp enabling AI agents to interact with Grafbase GraphQL infrastructure via natural language. Uses OAuth 2.1 for secure authentication.",
+      "tags": ["mcp", "model-context-protocol", "ai", "agents", "oauth"]
+    },
+    {
+      "title": "Announcing OAuth 2.1 support in the Grafbase MCP server",
+      "url": "https://grafbase.com/changelog/announcing-mcp-oauth",
+      "type": "changelog",
+      "author": "Tom Houlé",
+      "description": "Full OAuth 2.1 support enabling secure authentication and authorization for the Grafbase MCP server, replacing token-based approaches.",
+      "tags": ["oauth", "mcp", "authentication", "security"]
+    },
+    {
+      "title": "Benchmarking GraphQL Federation Gateways - September 2025 Edition",
+      "url": "https://grafbase.com/blog/benchmarking-graphql-federation-gateways",
+      "type": "blog",
+      "author": "Benjamin Rabier",
+      "date": "2025-09",
+      "category": "Engineering",
+      "description": "Performance analysis comparing Grafbase Gateway, Apollo Router, Cosmo Router, Hive Gateway, and Hive Router across query planning, large response handling, and request deduplication scenarios. Grafbase achieved P50 latencies of 19.5ms vs Cosmo's 372.1ms in uncached query planning.",
+      "tags": ["benchmarking", "performance", "federation", "gateway", "graphql"]
+    },
+    {
+      "title": "How commercetools uses Grafbase to support multi-tenancy, feature flagging, and AI innovation",
+      "url": "https://grafbase.com/blog/how-commercetools-uses-grafbase-to-support-multi-tenancy-feature-flagging-and-ai-innovation",
+      "type": "blog",
+      "category": "Customers",
+      "description": "Enterprise-scale implementation leveraging Grafbase Extensions and MCP server capabilities for multi-tenancy and AI integration at commercetools.",
+      "tags": ["customer", "multi-tenancy", "extensions", "mcp", "enterprise"]
+    },
+    {
+      "title": "Modernizing GraphQL at scale: How Pantheon implemented secure, scalable federation with Grafbase",
+      "url": "https://grafbase.com/blog/pantheon",
+      "type": "blog",
+      "category": "Customers",
+      "description": "How Pantheon unified web operations and accelerated development using Grafbase federation, achieving secure scalable GraphQL at enterprise scale.",
+      "tags": ["customer", "federation", "enterprise", "scalability"]
+    },
+    {
+      "title": "Seamless gRPC to GraphQL Federation with Grafbase Extensions and the Composite Schemas spec",
+      "url": "https://grafbase.com/blog/seamless-grpc-subgraphs-with-extensions-and-composite-schemas",
+      "type": "blog",
+      "author": "Tom Houlé",
+      "category": "Engineering",
+      "description": "Exposes gRPC services as federated GraphQL APIs without new infrastructure using Grafbase Extensions and the Composite Schemas specification.",
+      "tags": ["grpc", "graphql", "extensions", "composite-schemas", "federation"]
+    },
+    {
+      "title": "Beyond Apollo Federation - How to use Composite Schemas and Extensions to integrate non-GraphQL data sources",
+      "url": "https://grafbase.com/blog/beyond-apollo-federation-how-to-use-composite-schemas-and-extensions-to-integrate-non-graphql-data-sources",
+      "type": "blog",
+      "author": "Benjamin Rabier",
+      "category": "Engineering",
+      "description": "Integrating REST APIs and gRPC services via Composite Schemas as Extensions, moving beyond Apollo Federation constraints.",
+      "tags": ["composite-schemas", "extensions", "rest", "grpc", "federation"]
+    },
+    {
+      "title": "Extend REST and gRPC APIs with GraphQL using Grafbase",
+      "url": "https://grafbase.com/blog/extend-rest-and-grpc-apis-with-graphql-using-grafbase",
+      "type": "blog",
+      "author": "Tom Houlé",
+      "category": "Engineering",
+      "description": "Expose gRPC and REST services as GraphQL subgraphs without modifying existing systems using Grafbase Extensions.",
+      "tags": ["rest", "grpc", "graphql", "extensions", "subgraphs"]
+    }
+  ]
+}

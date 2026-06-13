@@ -1,0 +1,114 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "grafbase": "https://grafbase.com/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "provider": "schema:provider",
+    "dateCreated": { "@id": "schema:dateCreated", "@type": "xsd:date" },
+    "dateModified": { "@id": "schema:dateModified", "@type": "xsd:date" },
+    "version": "schema:version",
+    "documentation": { "@id": "schema:documentation", "@type": "@id" },
+    "baseUrl": { "@id": "schema:entryPoint", "@type": "@id" },
+    "tags": "schema:keywords",
+    "author": "schema:author",
+    "category": "schema:category",
+
+    "GraphQLFederation": "grafbase:GraphQLFederation",
+    "Subgraph": "grafbase:Subgraph",
+    "Gateway": "grafbase:Gateway",
+    "SchemaRegistry": "grafbase:SchemaRegistry",
+    "SchemaProposal": "grafbase:SchemaProposal",
+    "SchemaCheck": "grafbase:SchemaCheck",
+    "SchemaContract": "grafbase:SchemaContract",
+    "BreakingChangeApproval": "grafbase:BreakingChangeApproval",
+    "OperationCheck": "grafbase:OperationCheck",
+    "TrustedDocument": "grafbase:TrustedDocument",
+    "PersistedQuery": "grafbase:PersistedQuery",
+    "EntityCaching": "grafbase:EntityCaching",
+    "Extension": "grafbase:Extension",
+    "CompositeSchema": "grafbase:CompositeSchema",
+    "MCPServer": "grafbase:MCPServer",
+    "AccessToken": "grafbase:AccessToken",
+    "AuditLog": "grafbase:AuditLog",
+    "SingleSignOn": "grafbase:SingleSignOn",
+    "ManagementAPI": "grafbase:ManagementAPI",
+    "Branch": "grafbase:Branch",
+    "RateLimiting": "grafbase:RateLimiting",
+    "QueryPlan": "grafbase:QueryPlan",
+    "RequestDeduplication": "grafbase:RequestDeduplication",
+    "Telemetry": "grafbase:Telemetry",
+
+    "graphqlEndpoint": { "@id": "grafbase:graphqlEndpoint", "@type": "@id" },
+    "federationVersion": "grafbase:federationVersion",
+    "composedBy": { "@id": "grafbase:composedBy", "@type": "@id" },
+    "partOfFederation": { "@id": "grafbase:partOfFederation", "@type": "@id" },
+    "hasSchemaRegistry": { "@id": "grafbase:hasSchemaRegistry", "@type": "@id" },
+    "authMethod": "grafbase:authMethod",
+    "deploymentType": "grafbase:deploymentType",
+    "isEnterprise": { "@id": "grafbase:isEnterprise", "@type": "xsd:boolean" }
+  },
+
+  "@graph": [
+    {
+      "@id": "https://grafbase.com",
+      "@type": "schema:Organization",
+      "name": "Grafbase",
+      "description": "Enterprise GraphQL federation platform for building and deploying federated GraphQL APIs",
+      "url": "https://grafbase.com",
+      "schema:sameAs": [
+        "https://github.com/grafbase",
+        "https://www.linkedin.com/company/grafbase",
+        "https://x.com/grafbase"
+      ]
+    },
+    {
+      "@id": "https://api.grafbase.com/graphql",
+      "@type": ["schema:WebAPI", "ManagementAPI"],
+      "name": "Grafbase Management API",
+      "description": "GraphQL-based management API for programmatic control of Grafbase organizations, projects, schemas, branches, and deployed graph endpoints",
+      "url": "https://grafbase.com/docs/platform/api",
+      "graphqlEndpoint": "https://api.grafbase.com/graphql",
+      "authMethod": "Bearer token (OAuth 2.0)",
+      "provider": {
+        "@id": "https://grafbase.com"
+      }
+    },
+    {
+      "@id": "https://api.grafbase.com/mcp",
+      "@type": ["schema:WebAPI", "MCPServer"],
+      "name": "Grafbase Remote MCP Server",
+      "description": "Model Context Protocol server enabling AI agents to interact with Grafbase infrastructure using natural language and OAuth 2.1 authentication",
+      "url": "https://grafbase.com/changelog/announcing-grafbase-remote-mcp",
+      "authMethod": "OAuth 2.1",
+      "provider": {
+        "@id": "https://grafbase.com"
+      }
+    },
+    {
+      "@id": "grafbase:GatewayProduct",
+      "@type": ["schema:SoftwareApplication", "Gateway"],
+      "name": "Grafbase Gateway",
+      "description": "High-performance Rust-powered GraphQL federation gateway for routing and composing requests across subgraphs",
+      "url": "https://grafbase.com/docs/gateway",
+      "deploymentType": ["Docker", "Binary", "Cloud"],
+      "provider": {
+        "@id": "https://grafbase.com"
+      }
+    },
+    {
+      "@id": "grafbase:SchemaRegistryProduct",
+      "@type": ["schema:SoftwareApplication", "SchemaRegistry"],
+      "name": "Grafbase Schema Registry",
+      "description": "Platform component that stores, composes, and validates subgraph schemas into a unified federated schema",
+      "url": "https://grafbase.com/docs/platform",
+      "provider": {
+        "@id": "https://grafbase.com"
+      }
+    }
+  ]
+}

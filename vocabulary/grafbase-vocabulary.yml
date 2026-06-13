@@ -1,0 +1,184 @@
+vocabulary:
+  provider: grafbase
+  name: Grafbase Vocabulary
+  description: Key terms and concepts used in the Grafbase GraphQL federation platform
+  version: "1.0"
+  created: "2026-06-13"
+  url: https://grafbase.com/docs
+
+terms:
+
+  - term: GraphQL Federation
+    definition: >-
+      An architectural pattern enabling composition of multiple independent GraphQL APIs
+      (subgraphs) into a single unified API surface via a federation gateway.
+    category: architecture
+    url: https://grafbase.com/docs
+
+  - term: Subgraph
+    definition: >-
+      An independent GraphQL service that exposes part of a federated schema. Subgraphs
+      are composed by the Grafbase Schema Registry into a unified API.
+    category: architecture
+    url: https://grafbase.com/docs
+
+  - term: Grafbase Gateway
+    definition: >-
+      A high-performance Rust-powered GraphQL federation gateway that routes and
+      composes requests across subgraphs. Deployable as a Docker container or binary.
+    category: infrastructure
+    url: https://grafbase.com/docs/gateway
+
+  - term: Schema Registry
+    definition: >-
+      The Grafbase platform component that stores, composes, and validates subgraph
+      schemas into a unified federated schema.
+    category: platform
+    url: https://grafbase.com/docs/platform
+
+  - term: Schema Proposal
+    definition: >-
+      A collaborative workflow mechanism for proposing, reviewing, and approving
+      schema changes before they are published to the registry.
+    category: governance
+    url: https://grafbase.com/docs/platform
+
+  - term: Schema Check
+    definition: >-
+      Validation of proposed schema changes against the current federated schema
+      to detect breaking changes and composition errors.
+    category: governance
+    url: https://grafbase.com/docs/platform
+
+  - term: Breaking Change Approval
+    definition: >-
+      A governance feature that combines Schema Proposals with Operation Checks
+      to require human review before potentially breaking schema changes are deployed.
+    category: governance
+    url: https://grafbase.com/changelog/breaking-change-approvals
+
+  - term: Schema Contract
+    definition: >-
+      A filtered view of the federated GraphQL schema that exposes only specific
+      types and fields to particular consumers, defined using @tag directives.
+    category: security
+    url: https://grafbase.com/changelog/announcing-schema-contracts
+
+  - term: Operation Checks
+    definition: >-
+      Analysis of schema changes against observed query traffic to detect which
+      operations would be broken by proposed schema modifications.
+    category: governance
+    url: https://grafbase.com/docs/platform
+
+  - term: Trusted Documents
+    definition: >-
+      A security mechanism that restricts a federated graph to only execute
+      pre-approved GraphQL operations, preventing arbitrary query execution.
+    category: security
+    url: https://grafbase.com/docs/gateway
+
+  - term: Persisted Queries
+    definition: >-
+      An optimization technique where GraphQL queries are stored server-side
+      and referenced by ID, reducing request payload size and enabling caching.
+    category: performance
+    url: https://grafbase.com/docs/gateway
+
+  - term: Entity Caching
+    definition: >-
+      Gateway-level caching of resolved GraphQL entity fields to reduce
+      redundant subgraph requests and improve response times.
+    category: performance
+    url: https://grafbase.com/docs/gateway
+
+  - term: Extensions
+    definition: >-
+      Grafbase's mechanism for integrating non-GraphQL data sources (REST APIs,
+      gRPC services) into the federated schema using the Composite Schemas spec.
+    category: integration
+    url: https://grafbase.com/docs/gateway
+
+  - term: Composite Schemas
+    definition: >-
+      A GraphQL specification enabling composition of schemas from diverse data
+      sources including REST and gRPC services via directives and extensions.
+    category: specification
+    url: https://grafbase.com/blog/beyond-apollo-federation-how-to-use-composite-schemas-and-extensions-to-integrate-non-graphql-data-sources
+
+  - term: MCP (Model Context Protocol)
+    definition: >-
+      An open protocol enabling AI agents to interact with Grafbase infrastructure.
+      Grafbase operates a remote MCP server at api.grafbase.com/mcp with OAuth 2.1 auth.
+    category: ai-integration
+    url: https://grafbase.com/changelog/announcing-grafbase-remote-mcp
+
+  - term: Access Token
+    definition: >-
+      Bearer token used to authenticate requests to the Grafbase Management API
+      at api.grafbase.com/graphql. Managed through the Grafbase Dashboard.
+    category: security
+    url: https://grafbase.com/docs/gateway/security/access-tokens
+
+  - term: Rate Limiting
+    definition: >-
+      Gateway-level controls that restrict the volume of requests to the federated
+      graph to protect against abuse and ensure fair usage.
+    category: security
+    url: https://grafbase.com/docs/gateway
+
+  - term: Audit Logs
+    definition: >-
+      Immutable records of all organizational activity including graph management
+      operations, team changes, and access control events. Retained 90 days with CSV export.
+    category: compliance
+    url: https://grafbase.com/changelog/introducing-audit-logs
+
+  - term: Single Sign-On (SSO)
+    definition: >-
+      Native OpenID Connect-based SSO for the Grafbase Enterprise Platform enabling
+      direct identity provider integration with just-in-time membership provisioning.
+    category: authentication
+    url: https://grafbase.com/changelog/native-sso-in-the-enterprise-platform
+
+  - term: Management API
+    definition: >-
+      The GraphQL API at api.grafbase.com/graphql that mirrors all Grafbase Dashboard
+      functionality for programmatic control of organizations, projects, schemas, and branches.
+    category: api
+    url: https://grafbase.com/docs/platform/api
+
+  - term: Branch
+    definition: >-
+      An isolated deployment of a federated graph schema, enabling parallel development
+      and testing of schema changes before promotion to production.
+    category: platform
+    url: https://grafbase.com/docs/platform
+
+  - term: Grafbase CLI
+    definition: >-
+      Command-line tool for managing Grafbase projects, schemas, and deployments
+      locally and in CI/CD pipelines.
+    category: tooling
+    url: https://grafbase.com/cli
+
+  - term: Telemetry
+    definition: >-
+      Observability data including logs, metrics, and distributed traces emitted by
+      the Grafbase Gateway for monitoring federated graph performance and health.
+    category: observability
+    url: https://grafbase.com/docs/gateway
+
+  - term: Request Deduplication
+    definition: >-
+      Gateway optimization that merges identical concurrent subgraph requests into
+      a single upstream call, reducing load on backend services.
+    category: performance
+    url: https://grafbase.com/blog/benchmarking-graphql-federation-gateways
+
+  - term: Query Planning
+    definition: >-
+      The process by which the Grafbase Gateway determines the optimal execution
+      plan for resolving a federated GraphQL query across multiple subgraphs.
+    category: performance
+    url: https://grafbase.com/blog/benchmarking-graphql-federation-gateways
