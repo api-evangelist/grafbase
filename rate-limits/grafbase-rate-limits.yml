@@ -1,0 +1,69 @@
+specificationVersion: "0.1"
+name: Grafbase Rate Limits
+description: >-
+  Grafbase Gateway provides configurable rate limiting applied globally or per
+  subgraph. Two implementations are available: in-memory (single gateway) using
+  a generic cell rate algorithm (leaky bucket variant), and Redis-backed
+  (multi-gateway) using averaging fixed window rate limiting. Numeric thresholds
+  are set by the operator in gateway configuration and are not published as
+  fixed platform limits.
+url: https://grafbase.com/docs/gateway/security/rate-limiting
+created: "2026-06-13"
+modified: "2026-06-13"
+
+rateLimits:
+  - scope: gateway-global
+    name: Global Rate Limit (In-Memory)
+    description: >-
+      In-memory rate limiter applied across all GraphQL operations at the gateway
+      level. Uses the generic cell rate algorithm (leaky bucket type). Fastest
+      option — no network overhead per request. Resets on gateway restart. Limits
+      are operator-configured in gateway.toml.
+    algorithm: generic-cell-rate-algorithm
+    storage: in-memory
+    configurationRef: https://grafbase.com/docs/gateway/configuration/gateway#rate-limit
+    notes:
+      - Prevents sudden burst spikes before current time window expires
+      - Data does not persist across gateway restarts
+      - Suitable for single-gateway deployments
+
+  - scope: gateway-global
+    name: Global Rate Limit (Redis-Backed)
+    description: >-
+      Redis-backed rate limiter for multi-gateway deployments. Uses averaging
+      fixed window rate limiting with two temporary Redis keys per time window
+      (current + previous bucket). Counter increments happen off-thread; buckets
+      are deleted after the time window ends. Prevents spikes at window borders
+      with ~percent-level accuracy.
+    algorithm: averaging-fixed-window
+    storage: redis
+    configurationRef: https://grafbase.com/docs/gateway/configuration/gateway#rate-limit
+    notes:
+      - Redis instance must be co-located near gateway for best performance
+      - Suitable for distributed multi-gateway deployments
+      - Shared state across all gateway instances
+
+  - scope: subgraph
+    name: Per-Subgraph Rate Limit
+    description: >-
+      Rate limits can be scoped to individual subgraphs rather than applied
+      globally. Useful for protecting downstream services with different
+      capacity constraints. Configured per subgraph in the gateway configuration.
+    algorithm: generic-cell-rate-algorithm
+    storage: in-memory
+    configurationRef: https://grafbase.com/docs/gateway/configuration/subgraph-configuration#rate-limit
+    notes:
+      - Allows different limits per downstream service
+      - Can be combined with global limits
+
+  - scope: management-api
+    name: Management API Rate Limits
+    description: >-
+      The Grafbase GraphQL Management API (api.grafbase.com/graphql) may enforce
+      rate limits on programmatic access. Specific numeric thresholds are not
+      publicly documented; users should contact support for details.
+    algorithm: undisclosed
+    storage: undisclosed
+    notes:
+      - API is marked as unstable and subject to breaking changes
+      - Contact Grafbase support for current limits on management API calls

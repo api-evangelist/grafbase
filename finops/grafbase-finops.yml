@@ -1,0 +1,106 @@
+specificationVersion: "1.0"
+name: Grafbase FinOps
+description: >-
+  FinOps Framework FOCUS-aligned cost and usage profile for Grafbase. Grafbase
+  uses a two-tier model: a free open-source self-hosted gateway and a custom-priced
+  enterprise platform. Cost drivers are infrastructure (self-hosted) and enterprise
+  contract value rather than per-request consumption pricing.
+url: https://grafbase.com/pricing
+created: "2026-06-13"
+modified: "2026-06-13"
+
+provider:
+  name: Grafbase
+  url: https://grafbase.com
+  billingContact: https://grafbase.com/contact
+
+pricingModel:
+  type: hybrid
+  description: >-
+    Open-source tier is free (self-hosted infrastructure costs only). Enterprise
+    tier is custom-priced via annual or multi-year contracts negotiated with the
+    sales team.
+  tiers:
+    - name: Open Source
+      chargeType: none
+      description: No licensing fee; operator pays only for compute and infrastructure
+    - name: Enterprise
+      chargeType: contract
+      cadence: annual
+      description: Custom contract pricing; contact sales for a quote
+
+costCategories:
+  - category: Infrastructure
+    description: >-
+      Self-hosted gateway compute (Kubernetes, VMs, containers). Grafbase Gateway
+      is Rust-based and CPU-efficient; typical deployment targets sub-millisecond
+      gateway overhead. Operators own all infrastructure costs.
+    chargeType: operator-borne
+    unit: compute-hours
+
+  - category: Redis
+    description: >-
+      Redis instance required for multi-gateway distributed rate limiting.
+      Operator-managed and operator-cost. Should be co-located with gateway
+      instances to minimize latency.
+    chargeType: operator-borne
+    unit: redis-instance-hours
+
+  - category: Enterprise License
+    description: >-
+      Annual enterprise contract covering schema registry, SSO, audit logs,
+      schema contracts, dedicated support, and SLA guarantees. Custom pricing
+      based on usage and organization size.
+    chargeType: contract
+    cadence: annual
+    currency: USD
+    amount: custom
+    contact: https://grafbase.com/contact
+
+  - category: Extensions
+    description: >-
+      Kafka, Postgres, and gRPC extensions add data source connectivity to the
+      federated graph. Infrastructure costs for those backing services are
+      operator-borne; extension software is included in the enterprise license.
+    chargeType: operator-borne
+    unit: varies
+
+optimization:
+  - name: Right-size Gateway Instances
+    description: >-
+      Grafbase Gateway is Rust-based and highly efficient. Benchmark against
+      actual traffic patterns to avoid over-provisioning. The benchmarking blog
+      post (September 2025) provides reference numbers for gateway performance.
+    url: https://grafbase.com/blog
+
+  - name: In-Memory vs Redis Rate Limiting
+    description: >-
+      Use in-memory rate limiting for single-gateway deployments to avoid the
+      cost and latency of a Redis dependency. Only introduce Redis when running
+      multiple gateway replicas.
+
+  - name: Leverage Free Trial
+    description: >-
+      The 60-day free enterprise trial (no credit card) allows teams to validate
+      the platform and size their infrastructure needs before signing an enterprise
+      contract.
+    url: https://grafbase.com/pricing
+
+  - name: Open Source vs Enterprise Evaluation
+    description: >-
+      Teams with strong infrastructure capability can run the open-source gateway
+      with no licensing cost. Evaluate which enterprise-only features (SSO, audit
+      logs, schema contracts, dedicated support, SLA) are required before
+      committing to a contract.
+    url: https://github.com/grafbase/grafbase
+
+allocation:
+  dimensions:
+    - project
+    - subgraph
+    - environment
+  description: >-
+    Costs can be allocated by project (each Grafbase project maps to a federated
+    graph), by subgraph (downstream service owner), and by environment (production
+    vs staging branches). The schema registry tracks which teams own which subgraphs,
+    enabling chargeback to individual service teams.

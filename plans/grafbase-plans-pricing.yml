@@ -1,0 +1,82 @@
+specificationVersion: "0.1"
+name: Grafbase Plans and Pricing
+description: >-
+  Grafbase offers an open-source self-hosted tier and an enterprise tier with
+  full support and SLA guarantees. The 60-day free trial provides access to the
+  full enterprise platform before requiring a sales conversation.
+url: https://grafbase.com/pricing
+created: "2026-06-13"
+modified: "2026-06-13"
+
+plans:
+  - name: Open Source
+    description: >-
+      High-performance Rust-powered GraphQL gateway available under an open-source
+      license with no feature gating. Suitable for teams that want to self-host
+      without a commercial contract.
+    url: https://github.com/grafbase/grafbase
+    price:
+      model: free
+      amount: 0
+      currency: USD
+      period: monthly
+    features:
+      - Grafbase Gateway (Rust-powered)
+      - GraphQL Federation support
+      - Open-source license
+      - Schema composition
+      - Community support
+    limits:
+      - type: support
+        description: Community support only; no SLA
+      - type: hosting
+        description: Self-hosted only
+
+  - name: Enterprise
+    description: >-
+      Full enterprise platform with self-hosting options, dedicated customer
+      success, Slack Connect channel, 24/7/365 support, and up to 99.99% SLA.
+      Pricing is custom and requires contacting the sales team.
+    url: https://grafbase.com/pricing
+    price:
+      model: custom
+      currency: USD
+      period: monthly
+      contact: https://grafbase.com/contact
+    features:
+      - Fully self-hostable (cloud, hybrid, on-premise)
+      - Schema Registry
+      - Schema Checks and Proposals
+      - Audit Logs
+      - Native SSO (OpenID Connect / SAML)
+      - Fine-grained access control
+      - Schema Contracts
+      - Kafka, Postgres, gRPC extensions
+      - MCP (Model Context Protocol) integration
+      - Custom Checks
+      - Observability (logs, metrics, traces)
+      - Roadmap influence
+      - Dedicated customer success team
+      - Slack Connect channel
+      - 24/7/365 enterprise support
+      - Up to 99.99% SLA
+    limits:
+      - type: sla
+        description: Up to 99.99% uptime SLA
+      - type: support
+        description: 24/7/365 dedicated enterprise support
+
+  - name: Free Trial
+    description: >-
+      60-day free trial of the enterprise platform with no credit card required.
+      After the trial, users are invited to contact sales.
+    url: https://grafbase.com/pricing
+    price:
+      model: trial
+      amount: 0
+      currency: USD
+      period: 60-day trial
+    features:
+      - Full enterprise platform access
+      - No credit card required
+      - 60-day duration
