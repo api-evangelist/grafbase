@@ -59,7 +59,7 @@ common:
   url: https://grafbase.com/blog
 - type: Pricing
   url: https://grafbase.com/pricing
-- type: Changelog
+- type: ChangeLog
   url: https://grafbase.com/changelog
 - type: CLI
   url: https://grafbase.com/cli
