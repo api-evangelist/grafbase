@@ -47,6 +47,10 @@ apis:
   - FN: Grafbase Support
     url: https://grafbase.com/contact
 common:
+- type: VulnerabilityDisclosure
+  url: security/grafbase-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/grafbase-domain-security.yml
 - type: Website
   url: https://grafbase.com
 - type: Documentation
