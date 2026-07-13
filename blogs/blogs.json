@@ -2,11 +2,11 @@
   "repo": "grafbase",
   "feeds": [
     {
-      "source": "https://grafbase.com/blog",
+      "source": "https://grafbase.com/blog/feed/",
       "feed_url": "https://grafbase.com/blog/feed/",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "feed"
     },
     {
       "source": "https://www.linkedin.com/company/grafbase",
@@ -16,6 +16,6 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-06-27T12:03:07Z",
-  "post_count": 6
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 55
 }
