@@ -45,6 +45,12 @@ apis:
   tags:
   - GraphQL
   - Management
+  - Project
+  - Schemas
+  - Federation
+  tags_raw:
+  - GraphQL
+  - Management
   - Projects
   - Schemas
   - Federation
