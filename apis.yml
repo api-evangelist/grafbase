@@ -57,7 +57,7 @@ apis:
   - GraphQL
   - Management
   - Project
-  - Schemas
+  - Schema
   - Federation
   tags_raw:
   - GraphQL
