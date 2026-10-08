@@ -85,3 +85,29 @@ plans:
       - Full enterprise platform access
       - No credit card required
       - 60-day duration
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  units: []
+  plans:
+  - name: Open Source
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Free Trial
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
