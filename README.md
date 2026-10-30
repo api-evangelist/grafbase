@@ -64,29 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Grafbase is an enterprise GraphQL federation platform for building and deploying federated GraphQL APIs. It provides a high-performance Rust-powered gateway, schema registry, CLI, and a GraphQL management API for programmatically controlling projects, schemas, branches, and deployed graph endpoints. The platform delivers enterprise-grade governance, observability, rate limiting, authentication, and AI agent integration via Model Context Protocol (MCP) support.
+Grafbase is an enterprise GraphQL federation platform for building and deploying federated GraphQL APIs. It provides a high-performance Rust-powered gateway, schema registry, CLI, and a management API for programmatically controlling projects, schemas, branches, and deployed graph endpoints. The platform delivers enterprise-grade governance, observability, rate limiting, authentication, and AI agent integration via Model Context Protocol support.
 
-- **Website:** https://grafbase.com
-- **Documentation:** https://grafbase.com/docs
-- **GitHub Org:** https://github.com/grafbase
-- **LinkedIn:** https://www.linkedin.com/company/grafbase
-- **Blog:** https://grafbase.com/blog
-- **Pricing:** https://grafbase.com/pricing
-- **Changelog:** https://grafbase.com/changelog
+**Areas:** GraphQL · Federation · API Gateway · Schema Registry · GraphQL Federation · API Management · Observability · Enterprise API
 
-## APIs
+## Grafbase on APIs.io
 
-- **Grafbase Management API** — GraphQL API at `https://api.grafbase.com/graphql` for programmatic management of organizations, projects, schemas, branches, and graph endpoints. Uses Bearer token authentication.
+Everything profiled for Grafbase is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/grafbase/](https://apis.io/providers/grafbase/)** — or go straight to one of the APIs or properties below.
 
-## Repository Contents
+### APIs (1)
 
-| File | Description |
+- [Grafbase Management API](https://apis.io/apis/grafbase/grafbase-management-api/) — GraphQL-based management API that powers the Grafbase Dashboard and enables programmatic control of organizations, projects, schemas, branches, and deployed…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### GraphQL (1)
+
+GraphQL schemas.
+
+- [Grafbase GraphQL API](https://apis.io/graphqls/grafbase/grafbase-graphql/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Grafbase Context](https://apis.io/jsonld/grafbase/grafbase-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Grafbase Vocabulary](https://apis.io/vocabularies/grafbase/grafbase-vocabulary/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Grafbase Domain Security](https://apis.io/security/grafbase/grafbase-domain-security/)
+- [Grafbase Vulnerability Disclosure](https://apis.io/security/grafbase/grafbase-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Grafbase Plans Pricing](https://apis.io/plans/grafbase/grafbase-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Grafbase Rate Limits](https://apis.io/rate-limits/grafbase/grafbase-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Grafbase Finops](https://apis.io/finops/grafbase/grafbase-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://grafbase.com)
+- [Documentation](https://grafbase.com/docs)
+- [Pricing](https://grafbase.com/pricing)
+- [Changelog](https://grafbase.com/changelog)
+- [Blog](https://grafbase.com/blog)
+
+## API Evangelist rating
+
+**Kin Score 31.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
 |---|---|
-| `apis.yml` | APIs.json 0.19 provider index |
-| `plans/grafbase-plans-pricing.yml` | API Commons Plans 0.1 — Open Source and Enterprise tiers |
-| `rate-limits/grafbase-rate-limits.yml` | API Commons Rate Limits 0.1 — gateway and management API limits |
-| `finops/grafbase-finops.yml` | FinOps Framework 1.0 FOCUS-aligned cost profile |
+| Discoverability | 66.1 |
+| Contract quality | 43.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 18.4 |
 
-## Maintainer
+**Agent readiness 16.1** — agent-aware
 
-**Kin Lane** — kin@apievangelist.com
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/grafbase/](https://apis.io/providers/grafbase/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Grafbase: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/grafbase/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
